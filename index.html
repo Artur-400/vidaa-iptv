@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="manifest" href="manifest.json">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VIDAA IPTV — MVP</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="brand">
+        <img src="logo.svg" alt="logo" class="logo">
+        <h1>VIDAA IPTV — MVP</h1>
+      </div>
+      <div class="controls" id="controls">
+        <button id="btn-prev" title="Предыдущий (◀)">◀</button>
+        <button id="btn-play" title="Play / Pause (Space)">⏯</button>
+        <button id="btn-next" title="Следующий (▶)">▶</button>
+        <div class="vol">🔊 <span id="vol-label">100%</span></div>
+      </div>
+    </header>
+
+    <main>
+      <aside id="sidebar">
+        <div class="playlist-header">Плейлист</div>
+        <ul id="groups"></ul>
+        <div class="channel-list-container">
+          <ul id="channelList" tabindex="0"></ul>
+        </div>
+      </aside>
+
+      <section id="playerSection">
+        <div class="video-wrap">
+          <video id="player" playsinline></video>
+        </div>
+        <div id="now">
+          <div id="now-title"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Навигация: ↑↓ — выбор, Enter — воспроизвести, Space — пауза/воспроизведение, + / - — громкость, Backspace — останов</small>
+    </footer>
+  </div>
+
+<script>
+// Встроенный URL плейлиста:
+const M3U_URL = "https://example.com/playlist.m3u";
+</script>
+<script src="app.js"></script>
+</body>
+</html>
